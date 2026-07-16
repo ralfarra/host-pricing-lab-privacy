@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miami '26 · England vs France</title>
+  <meta name="description" content="A weekend itinerary for the 2026 World Cup Third-Place Playoff — England vs France at Hard Rock Stadium, Miami." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0a0e1a;
+      --paper:#f7f4ee;
+      --sun:#ff7a45;
+      --sun2:#ffb648;
+      --pink:#ff5c8a;
+      --sky:#3aa0ff;
+      --sea:#12d6c4;
+      --eng:#e63329;
+      --fra:#2b46c9;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --muted:rgba(255,255,255,.62);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Sora',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:var(--ink);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+    a{color:inherit}
+    h1,h2,h3{line-height:1.02}
+    .display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.5px;text-transform:uppercase}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:flex;flex-direction:column;justify-content:center;
+      padding:90px 0 70px;
+      overflow:hidden;
+      background:
+        radial-gradient(120% 80% at 80% -10%, rgba(255,92,138,.55), transparent 55%),
+        radial-gradient(120% 90% at 10% 0%, rgba(255,182,72,.5), transparent 50%),
+        linear-gradient(180deg,#ff7a45 0%, #ff5c8a 34%, #7b3fbf 62%, #241a52 88%, #0a0e1a 100%);
+    }
+    .sun{
+      position:absolute;left:50%;top:16%;transform:translateX(-50%);
+      width:min(560px,86vw);aspect-ratio:1;border-radius:50%;
+      background:linear-gradient(180deg,#fff3b0,#ffb648 45%,#ff6a3d);
+      filter:blur(2px);
+      box-shadow:0 0 120px 30px rgba(255,150,80,.5);
+      z-index:0;opacity:.9;
+    }
+    .sun::after{
+      content:"";position:absolute;inset:0;border-radius:50%;
+      background:repeating-linear-gradient(180deg,transparent 0 46px,rgba(36,26,82,.55) 46px 58px);
+      -webkit-mask:linear-gradient(180deg,transparent 55%,#000 55%);
+              mask:linear-gradient(180deg,transparent 55%,#000 55%);
+    }
+    .palms{position:absolute;inset:auto 0 0 0;height:180px;z-index:1;
+      background:
+        radial-gradient(60% 100% at 8% 100%, rgba(10,14,26,.9), transparent 70%),
+        radial-gradient(60% 100% at 92% 100%, rgba(10,14,26,.9), transparent 70%);
+    }
+    .hero .wrap{position:relative;z-index:2}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+      background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.28);
+      padding:9px 16px;border-radius:999px;backdrop-filter:blur(6px);
+    }
+    .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--sea);box-shadow:0 0 12px var(--sea)}
+    .hero h1{
+      font-family:'Anton',sans-serif;text-transform:uppercase;
+      font-size:clamp(56px,14vw,168px);line-height:.86;margin:22px 0 8px;
+      text-shadow:0 6px 40px rgba(0,0,0,.35);
+    }
+    .hero h1 .vs{
+      display:block;font-size:clamp(20px,4vw,42px);letter-spacing:6px;
+      -webkit-text-fill-color:transparent;
+      background:linear-gradient(90deg,#fff,#ffe9c7);-webkit-background-clip:text;background-clip:text;
+      margin:6px 0;
+    }
+    .teams{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px}
+    .flag{display:inline-flex;align-items:center;gap:12px;font-family:'Anton',sans-serif;
+      font-size:clamp(26px,6vw,46px);text-transform:uppercase;letter-spacing:1px}
+    .flag .em{font-size:.9em;filter:drop-shadow(0 3px 6px rgba(0,0,0,.4))}
+    .versus{font-family:'Anton';font-size:clamp(20px,4vw,34px);opacity:.85}
+    .subline{margin-top:22px;font-size:clamp(16px,2.4vw,20px);font-weight:500;max-width:640px;color:#fff}
+    .subline b{color:#fff}
+    .herometa{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .chip{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.25);border-radius:12px;
+      padding:12px 16px;backdrop-filter:blur(6px);font-size:14px}
+    .chip .l{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+    .chip .v{font-weight:700;font-size:16px}
+    .scrollhint{margin-top:44px;font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
+
+    /* ---------- SECTIONS ---------- */
+    section{padding:74px 0}
+    .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--sun2);font-weight:700}
+    .h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(30px,6vw,58px);margin:10px 0 6px}
+    .lede{color:var(--muted);max-width:640px;font-size:17px;line-height:1.6}
+
+    /* flights */
+    .flights{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+    .fcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
+      backdrop-filter:blur(10px);position:relative;overflow:hidden}
+    .fcard::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;
+      background:linear-gradient(180deg,var(--sun),var(--pink))}
+    .fcard .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sun2);font-weight:700}
+    .route{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 6px}
+    .apt{font-family:'Anton',sans-serif;font-size:44px}
+    .apt small{display:block;font-family:'Sora';font-weight:600;font-size:13px;color:var(--muted);letter-spacing:0;margin-top:4px}
+    .plane{flex:1;text-align:center;color:var(--muted);font-size:12px;position:relative}
+    .plane .dur{display:block;margin-bottom:6px;font-weight:600;color:#fff}
+    .plane .track{height:2px;background:linear-gradient(90deg,transparent,var(--sea),transparent);position:relative}
+    .plane .track::after{content:"✈";position:absolute;right:-2px;top:-11px;font-size:16px;color:#fff}
+    .frow{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+    .frow div{font-size:13px}
+    .frow .k{color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-size:11px}
+    .frow .val{font-weight:700;font-size:15px}
+
+    /* timeline */
+    .day{margin-top:46px}
+    .dayhead{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+      border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:8px}
+    .dayhead .num{font-family:'Anton';font-size:clamp(34px,7vw,64px);
+      -webkit-text-fill-color:transparent;background:linear-gradient(120deg,var(--sun),var(--pink),var(--sky));
+      -webkit-background-clip:text;background-clip:text}
+    .dayhead .dname{font-family:'Anton';font-size:clamp(20px,4vw,30px);text-transform:uppercase}
+    .dayhead .ddate{color:var(--muted);font-weight:600;font-size:15px}
+    .tl{list-style:none;position:relative;margin-left:8px;padding-left:26px}
+    .tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;
+      background:linear-gradient(180deg,var(--sun),var(--pink),var(--sky))}
+    .tl li{position:relative;padding:16px 0}
+    .tl li::before{content:"";position:absolute;left:-26px;top:22px;width:12px;height:12px;border-radius:50%;
+      background:var(--ink);border:2px solid var(--sun2);box-shadow:0 0 0 4px rgba(255,182,72,.14)}
+    .tl .time{font-family:'Anton';letter-spacing:1px;color:var(--sun2);font-size:15px}
+    .tl .title{font-weight:700;font-size:18px;margin:2px 0 4px}
+    .tl .desc{color:var(--muted);font-size:15px;line-height:1.55}
+    .tl li.star::before{background:var(--eng);border-color:#fff;width:16px;height:16px;left:-28px;top:20px;
+      box-shadow:0 0 0 5px rgba(230,51,41,.25),0 0 20px rgba(230,51,41,.6)}
+
+    /* match feature */
+    .match{border-radius:26px;overflow:hidden;position:relative;margin-top:38px;
+      background:
+        radial-gradient(90% 120% at 0% 0%, rgba(230,51,41,.55), transparent 55%),
+        radial-gradient(90% 120% at 100% 100%, rgba(43,70,201,.6), transparent 55%),
+        #10152a;
+      border:1px solid var(--line);padding:40px}
+    .match .pitch{position:absolute;inset:0;opacity:.10;
+      background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 64px)}
+    .match .inner{position:relative;z-index:1;text-align:center}
+    .match .comp{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff;opacity:.8;font-weight:700}
+    .match .fixture{display:flex;align-items:center;justify-content:center;gap:clamp(14px,5vw,50px);margin:22px 0}
+    .match .side{font-family:'Anton';font-size:clamp(30px,7vw,60px);text-transform:uppercase}
+    .match .side .em{display:block;font-size:1.3em;margin-bottom:6px}
+    .match .vsbig{font-family:'Anton';font-size:clamp(22px,4vw,34px);opacity:.7}
+    .match .venue{font-size:16px;color:#fff;opacity:.9;font-weight:500}
+    .match .venue b{color:var(--sun2)}
+
+    /* cards grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:34px}
+    .gcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
+      transition:transform .25s ease,border-color .25s ease}
+    .gcard:hover{transform:translateY(-4px);border-color:rgba(255,182,72,.5)}
+    .gcard .ic{font-size:26px}
+    .gcard h3{font-size:18px;margin:12px 0 6px}
+    .gcard p{color:var(--muted);font-size:14px;line-height:1.55}
+
+    /* tips */
+    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+    .tip{background:linear-gradient(160deg,rgba(255,122,69,.12),rgba(255,92,138,.06));
+      border:1px solid var(--line);border-radius:16px;padding:20px}
+    .tip .ic{font-size:22px}
+    .tip h4{font-size:16px;margin:10px 0 6px}
+    .tip p{color:var(--muted);font-size:14px;line-height:1.55}
+
+    footer{padding:60px 0 80px;text-align:center;border-top:1px solid var(--line);
+      background:linear-gradient(180deg,transparent,rgba(255,122,69,.06))}
+    footer .big{font-family:'Anton';font-size:clamp(28px,7vw,56px);text-transform:uppercase;
+      -webkit-text-fill-color:transparent;background:linear-gradient(90deg,var(--sun),var(--pink),var(--sky));
+      -webkit-background-clip:text;background-clip:text}
+    footer p{color:var(--muted);margin-top:14px;font-size:14px}
+    .disc{max-width:620px;margin:22px auto 0;font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
+
+    @media(max-width:760px){
+      .flights{grid-template-columns:1fr}
+      .apt{font-size:36px}
+      section{padding:56px 0}
+    }
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="sun"></div>
+    <div class="palms"></div>
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Miami · World Cup 2026</span>
+      <h1>
+        Miami<span class="vs">The Bronze Final Weekend</span>
+      </h1>
+      <div class="teams">
+        <span class="flag"><span class="em">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>England</span>
+        <span class="versus">vs</span>
+        <span class="flag"><span class="em">🇫🇷</span>France</span>
+      </div>
+      <p class="subline">Two days, one massive match. You land late Friday, own all of Saturday around the <b>Third-Place Playoff at Hard Rock Stadium</b>, and squeeze in Miami sun before Sunday's flight home.</p>
+      <div class="herometa">
+        <div class="chip"><span class="l">Match Day</span><span class="v">Sat · Jul 18</span></div>
+        <div class="chip"><span class="l">Venue</span><span class="v">Hard Rock Stadium</span></div>
+        <div class="chip"><span class="l">Base</span><span class="v">Fort Lauderdale / Miami</span></div>
+        <div class="chip"><span class="l">Trip</span><span class="v">Jul 17 – 19, 2026</span></div>
+      </div>
+      <div class="scrollhint">↓ Scroll for the full plan</div>
+    </div>
+  </header>
+
+  <!-- FLIGHTS -->
+  <section id="flights">
+    <div class="wrap reveal">
+      <span class="eyebrow">Your Flights</span>
+      <h2 class="h2">Getting there &amp; back</h2>
+      <p class="lede">Both legs on American. You arrive late Friday and depart Sunday evening — the plan below is built around exactly these times.</p>
+      <div class="flights">
+        <div class="fcard">
+          <span class="tag">Outbound · Fri, Jul 17</span>
+          <div class="route">
+            <div class="apt">DFW<small>Dallas</small></div>
+            <div class="plane"><span class="dur">2h 50m</span><div class="track"></div></div>
+            <div class="apt">FLL<small>Fort Lauderdale</small></div>
+          </div>
+          <div class="frow">
+            <div><div class="k">Depart</div><div class="val">8:08 PM</div></div>
+            <div><div class="k">Arrive</div><div class="val">11:58 PM</div></div>
+            <div><div class="k">Flight</div><div class="val">AA 1393</div></div>
+            <div><div class="k">Conf</div><div class="val">QSRGPN</div></div>
+          </div>
+        </div>
+        <div class="fcard">
+          <span class="tag">Return · Sun, Jul 19</span>
+          <div class="route">
+            <div class="apt">FLL<small>Fort Lauderdale</small></div>
+            <div class="plane"><span class="dur">3h 12m</span><div class="track"></div></div>
+            <div class="apt">DFW<small>Dallas</small></div>
+          </div>
+          <div class="frow">
+            <div><div class="k">Depart</div><div class="val">7:11 PM</div></div>
+            <div><div class="k">Arrive</div><div class="val">9:23 PM</div></div>
+            <div><div class="k">Flight</div><div class="val">AA 1868</div></div>
+            <div><div class="k">Conf</div><div class="val">QSRGPN</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCH -->
+  <section id="match" style="padding-top:20px">
+    <div class="wrap reveal">
+      <span class="eyebrow">The Main Event</span>
+      <h2 class="h2">The reason you're here</h2>
+      <div class="match">
+        <div class="pitch"></div>
+        <div class="inner">
+          <div class="comp">FIFA World Cup 2026 · Third-Place Playoff</div>
+          <div class="fixture">
+            <div class="side"><span class="em">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>England</div>
+            <div class="vsbig">VS</div>
+            <div class="side"><span class="em">🇫🇷</span>France</div>
+          </div>
+          <p class="venue">Saturday, July 18 · <b>Hard Rock Stadium</b>, Miami Gardens</p>
+          <p class="venue" style="margin-top:8px;font-size:14px;opacity:.7">Confirm your exact kickoff time on your ticket — the timeline below assumes an afternoon/early-evening start, so shift it if yours differs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section id="itinerary">
+    <div class="wrap reveal">
+      <span class="eyebrow">Day by Day</span>
+      <h2 class="h2">The itinerary</h2>
+      <p class="lede">A short trip done right: land, rest, go big on Saturday, and grab a slice of Miami before wheels-up.</p>
+
+      <!-- FRIDAY -->
+      <div class="day">
+        <div class="dayhead">
+          <span class="num">01</span>
+          <span class="dname">Landing Night</span>
+          <span class="ddate">Friday · July 17</span>
+        </div>
+        <ul class="tl">
+          <li>
+            <div class="time">11:58 PM</div>
+            <div class="title">Touch down at FLL</div>
+            <div class="desc">Fort Lauderdale is compact — grab your bag and get straight to a rideshare or your rental. Hard Rock Stadium sits between FLL and Miami, so basing in Fort Lauderdale, Hollywood, or Aventura keeps you closest to the match.</div>
+          </li>
+          <li>
+            <div class="time">12:40 AM</div>
+            <div class="title">Check in &amp; a late bite</div>
+            <div class="desc">If you've got any energy left, Fort Lauderdale's Las Olas Boulevard has late-night spots. Otherwise: hydrate, set an alarm, and bank the sleep — tomorrow is the big one.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SATURDAY -->
+      <div class="day">
+        <div class="dayhead">
+          <span class="num">02</span>
+          <span class="dname">Match Day</span>
+          <span class="ddate">Saturday · July 18</span>
+        </div>
+        <ul class="tl">
+          <li>
+            <div class="time">9:00 AM</div>
+            <div class="title">Beach breakfast</div>
+            <div class="desc">Ease in with a Cuban coffee and eggs near the water. Fort Lauderdale Beach or Hollywood Beach Broadwalk are both relaxed, walkable starts to the day.</div>
+          </li>
+          <li>
+            <div class="time">11:00 AM</div>
+            <div class="title">Wynwood or the beach</div>
+            <div class="desc">If you want culture: head south to <b>Wynwood Walls</b> for street art, murals, and coffee. If you want to conserve energy for the stadium: park it on the sand, swim, and stay out of the midday heat.</div>
+          </li>
+          <li>
+            <div class="time">1:30 PM</div>
+            <div class="title">Fuel up before kickoff</div>
+            <div class="desc">Eat a proper meal before you head in — stadium queues are long. Grab Cuban (a media noche or ropa vieja) or something hearty. Hydrate hard; July in Miami is hot and humid.</div>
+          </li>
+          <li class="star">
+            <div class="time">Afternoon</div>
+            <div class="title">⚽ England vs France — Hard Rock Stadium</div>
+            <div class="desc">Arrive <b>2+ hours early</b>. Security and gates for a World Cup match are serious — bring a clear bag, screenshot your mobile ticket, and wear your colours. Soak in the pre-match atmosphere; a bronze-final derby between these two is a bucket-list watch.</div>
+          </li>
+          <li class="star">
+            <div class="time">Full time</div>
+            <div class="title">The final whistle</div>
+            <div class="desc">Let the crowd thin for ~30 minutes before leaving the lot — traffic out of Miami Gardens is heavy. Grab water and take it slow.</div>
+          </li>
+          <li>
+            <div class="time">Evening</div>
+            <div class="title">Celebrate in the city</div>
+            <div class="desc">Ride the high into the night. <b>Brickell</b> for rooftop bars and dinner, <b>Wynwood</b> for a younger crowd and breweries, or <b>South Beach / Ocean Drive</b> for the classic Miami neon walk. Pace yourself — you fly tomorrow.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SUNDAY -->
+      <div class="day">
+        <div class="dayhead">
+          <span class="num">03</span>
+          <span class="dname">One Last Slice</span>
+          <span class="ddate">Sunday · July 19</span>
+        </div>
+        <ul class="tl">
+          <li>
+            <div class="time">10:00 AM</div>
+            <div class="title">Slow brunch</div>
+            <div class="desc">Sleep in, then a leisurely brunch. If you're near South Beach, wander the <b>Art Deco district</b> along Ocean Drive; if you stayed north, Las Olas in Fort Lauderdale is an easy stroll.</div>
+          </li>
+          <li>
+            <div class="time">12:30 PM</div>
+            <div class="title">Beach or Bayside</div>
+            <div class="desc">One more hour of sun, a swim, or a walk. Keep it low-key and near your base so you're not rushing later. Buy any souvenirs now.</div>
+          </li>
+          <li>
+            <div class="time">3:00 PM</div>
+            <div class="title">Check out &amp; head to FLL</div>
+            <div class="desc">Return the car / call your ride. Aim to be at the airport by ~4:45 PM for the 7:11 PM flight — give yourself buffer for Sunday traffic and security.</div>
+          </li>
+          <li class="star">
+            <div class="time">7:11 PM</div>
+            <div class="title">✈ Wheels up — FLL → DFW</div>
+            <div class="desc">Home by 9:23 PM with one unforgettable World Cup match in the bank.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EAT & EXPLORE -->
+  <section id="explore" style="background:linear-gradient(180deg,transparent,rgba(58,160,255,.05),transparent)">
+    <div class="wrap reveal">
+      <span class="eyebrow">If You Have Time</span>
+      <h2 class="h2">Eat &amp; explore</h2>
+      <div class="grid">
+        <div class="gcard"><div class="ic">🎨</div><h3>Wynwood Walls</h3><p>Open-air street-art museum — murals, galleries, breweries and great coffee. The most photogenic corner of Miami.</p></div>
+        <div class="gcard"><div class="ic">🌆</div><h3>Brickell</h3><p>Miami's glossy downtown — rooftop bars, waterfront dining, and Brickell City Centre for a polished night out.</p></div>
+        <div class="gcard"><div class="ic">🏖️</div><h3>South Beach</h3><p>Pastel Art Deco hotels, Ocean Drive neon, and turquoise water. The classic Miami postcard.</p></div>
+        <div class="gcard"><div class="ic">☕</div><h3>Little Havana</h3><p>Calle Ocho, cafecito windows, cigar rollers and Cuban food. Order a media noche and a colada to share.</p></div>
+        <div class="gcard"><div class="ic">🌴</div><h3>Las Olas</h3><p>Fort Lauderdale's walkable dining strip — closest lively nightlife to your base if you stay up north.</p></div>
+        <div class="gcard"><div class="ic">🚤</div><h3>Bayside &amp; the water</h3><p>Boat tours, waterfront eats, and skyline views. An easy, breezy way to see Miami from the sea.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section id="tips">
+    <div class="wrap reveal">
+      <span class="eyebrow">Know Before You Go</span>
+      <h2 class="h2">Match-weekend playbook</h2>
+      <div class="tips">
+        <div class="tip"><div class="ic">🎟️</div><h4>Ticket &amp; bag rules</h4><p>Mobile ticket screenshotted and charged. Clear-bag policy at Hard Rock — leave the backpack, bring only essentials.</p></div>
+        <div class="tip"><div class="ic">🚗</div><h4>Getting to the stadium</h4><p>Hard Rock is ~20 min from FLL, ~25 from downtown Miami. Rideshare surges hard post-match — consider pre-booking or walking a few blocks out before ordering.</p></div>
+        <div class="tip"><div class="ic">🥵</div><h4>Beat the heat</h4><p>July in Miami is 90°F+ and humid. Sunscreen, a hat, and constant water. Afternoon thunderstorms are common — check radar.</p></div>
+        <div class="tip"><div class="ic">🚆</div><h4>Brightline option</h4><p>The Brightline train links Fort Lauderdale, Aventura and Miami if you'd rather skip driving between the two downtowns.</p></div>
+        <div class="tip"><div class="ic">🏨</div><h4>Where to stay</h4><p>Aventura or Hollywood put you between FLL and the stadium. South Beach is more fun but a longer haul on match day.</p></div>
+        <div class="tip"><div class="ic">⏰</div><h4>Confirm kickoff</h4><p>Double-check the official kickoff time on your ticket and shift Saturday's plan around it — everything else flexes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="big">Enjoy the match 🏆</div>
+      <p>England 🏴󠁧󠁢󠁥󠁮󠁧󠁿 vs France 🇫🇷 · Hard Rock Stadium · July 18, 2026</p>
+      <p class="disc">Itinerary generated from your flight confirmation. Match details are based on the 2026 World Cup Third-Place Playoff in Miami — always confirm kickoff time, venue, and entry rules against your official ticket and FIFA before you travel. Times for activities are suggestions, not reservations.</p>
+    </div>
+  </footer>
+
+  <script>
+    // gentle scroll reveal
+    const io=new IntersectionObserver((es)=>{
+      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
