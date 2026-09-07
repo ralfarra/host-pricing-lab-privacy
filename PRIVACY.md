@@ -1,67 +1,162 @@
-# Host Pricing Lab BETA Privacy Policy
+# Pricing Lab — Privacy Policy
 
-Effective date: July 12, 2026
+Effective date: September 7, 2026 · Applies to extension version 1.14.1 and later
 
-Host Pricing Lab BETA is a read-only browser extension that helps Turo hosts capture visible quote information and test pricing rules locally.
+Pricing Lab is a Chrome extension that helps Turo hosts read the prices on their
+own host calendar, calculate an explainable pricing recommendation, and apply a
+price they have approved back to that calendar.
 
-## Information the extension handles
+## What the extension reads
 
-When a user opens or activates the extension on a Turo page, the extension may read information visible on that page, including:
+When you open the extension or press a control inside it, it may read
+information visible on the Turo page you are on, including:
 
-- page URL and listing ID;
-- vehicle year, make, model, trim, and visible features;
+- the page URL and listing ID;
+- vehicle year, make, model, trim and visible features;
 - selected trip dates and trip length;
-- displayed trip total and derived daily average;
+- the displayed trip total and derived daily average;
 - included mileage and overage rate;
-- pickup location, rating, and trip count when visible.
+- pickup location, rating and trip count when visible;
+- the per-day prices, booked status and custom/dynamic status shown on your own
+  host calendar.
 
-The extension also handles pricing settings entered by the user, such as Dynamic Pricing recommendation, markup percentage, and weekday, weekend, or holiday floors.
+If you use the optional Compare feature, it also reads publicly listed prices of
+comparable cars from Turo's own search results, and your own vehicle list so
+your listing can be excluded from your own market median.
 
-## How information is used
+Nothing is read on a timer, on a schedule, or on any site other than turo.com.
+Every read starts with something you pressed.
 
-Information is used only to:
+One thing does outlive the popup, and it is worth stating plainly: a **Compare**
+run you started keeps working after you close the popup. It finishes reading
+Turo's search results, saves the result for you to come back to, and marks the
+toolbar icon when it is done. It stops on its own when it finishes. Nothing else
+in the extension continues after the popup closes, and closing the popup never
+starts anything.
 
-- display the captured quote to the user;
-- calculate an explainable pricing recommendation;
-- maintain a local snapshot history;
-- export snapshots at the user's request.
+## What the extension writes
 
-## Storage and retention
+Pricing Lab can change prices on your own host calendar. This is not automatic
+and never happens in the background:
 
-All settings and captured snapshots are stored in Chrome local extension storage on the user's device. The beta stores at most 250 snapshots. Users can delete the snapshot history using the Clear button or remove all extension data by uninstalling the extension.
+- every change is previewed on the page, showing the current value and the new
+  value, before anything is saved;
+- nothing is saved until you click Apply;
+- there is no scheduled, unattended or background repricing.
 
-## Data transmission and sharing
+## What is stored on your device
 
-The beta does not transmit captured page information or pricing settings to a developer-controlled server. It does not sell, rent, share, or use this information for advertising, profiling, or credit-related decisions.
+The following are stored in Chrome local extension storage on your own
+computer:
 
-Exported JSON files are created only after the user clicks Export JSON and remain under the user's control.
+- your pricing rules, floors and settings;
+- up to 250 captured quote snapshots;
+- your most recent calendar scan;
+- a log of price changes you applied;
+- your Pro license status;
+- a random install identifier, which is not derived from anything personal and
+  is not linked to your identity;
+- any feedback message that could not be sent at the time you wrote it.
 
-## Authentication and browser data
+You can clear snapshot history with the Clear button, or remove all extension
+data by uninstalling the extension.
 
-The extension does not request or store Turo passwords. It does not read cookies, saved passwords, general browsing history, payment information, guest messages, or authentication tokens.
+## What leaves your device, and only when you choose
 
-## Price changes
+By default, captured page data and pricing settings stay on your device. There
+are three optional features that transmit data, each only when you actively use
+it:
 
-The beta does not change Turo calendar prices or perform account actions. Recommendations are informational and require the host to make any calendar change separately.
+**1. The Pro AI pricing assistant.** When you submit a question, the extension
+sends that question plus a compact summary of your own captured pricing,
+calendar and competitor data to our proxy server at
+`host-pricing-lab-proxy.vercel.app`. The proxy relays it to our AI provider,
+Anthropic, and returns a text answer. If you never open the assistant, this
+never happens.
+
+**2. The Feedback tab.** When you write a bug report or feature request and
+press Send, the extension sends:
+
+- the message you typed;
+- an optional reply email, if you choose to enter one — it can be left blank
+  and the report will still send;
+- a short list of non-identifying diagnostics: the extension version, whether
+  you are on the free or Pro plan, a coarse page category such as "host
+  calendar", the number of days in your last scan, and the number of saved
+  snapshots;
+- **only if you tick the off-by-default "Attach my last calendar scan" box:**
+  the dates in your current pricing window, the price on each day, your own
+  floor for each day, and whether each day is booked or below your floor.
+
+The panel shows a "What gets sent" list generated from the actual data being
+sent, so it always matches the payload.
+
+**3. Billing.** If you choose to upgrade to Pro, the extension contacts
+ExtensionPay (`extensionpay.com`), our third-party billing provider, to open
+checkout and verify license status. Payment is processed by Stripe through
+ExtensionPay. We never see or store your card details. No Turo page data or
+pricing settings are sent to ExtensionPay.
+
+## What is never transmitted
+
+- Your Turo password. The extension never requests or stores it.
+- Cookies, session tokens or authentication credentials.
+- Your general browsing history.
+- Your full Turo URL. Before any feedback leaves your device the URL is reduced
+  to a coarse category such as "host calendar" or "search results", because a
+  Turo URL contains a vehicle identifier.
+- Which vehicle a report relates to, your name, or anything from your Turo
+  account.
+- Payment card details.
+- Screenshots or images. The extension has no ability to capture your screen.
+
+## Retention
+
+Feedback reports, including any optional email and any attached calendar scan,
+are retained for up to 400 days and then deleted automatically. AI assistant
+questions are not retained after the answer is returned; only an anonymous
+per-install spend counter is kept, so the monthly usage cap can be enforced.
+
+## Sharing
+
+We do not sell, rent, or trade any of this information. We do not use it for
+advertising, profiling, or credit-related decisions. It is shared only with the
+service providers named above — Anthropic for the AI assistant, and
+ExtensionPay and Stripe for billing — and only for the purpose described.
+
+## Your choices
+
+- The Feedback email field is optional; leave it blank to report anonymously.
+- The calendar-scan attachment is off by default and must be ticked each time.
+- The AI assistant is optional and only runs when you submit a question.
+- To have a feedback report deleted before its retention period ends, email
+  turopricinglab@gmail.com with the report id shown when you sent it.
 
 ## Security
 
-The extension requests only the permissions required for its single purpose. All executable code is packaged with the extension; no remote code is loaded.
+The extension requests only the permissions required for its single purpose.
+All executable code is packaged with the extension; no remote code is loaded or
+evaluated.
 
 ## Children
 
-The extension is intended for adult vehicle hosts and is not directed to children.
+Pricing Lab is intended for adult vehicle hosts and is not directed to
+children.
 
 ## Changes
 
-Material changes to this policy will be reflected in an updated policy and extension release.
+Material changes to this policy will be published here alongside an updated
+extension release, with a new effective date.
 
 ## Contact
 
-Questions can be submitted through the public privacy repository:
+turopricinglab@gmail.com
 
+Or open an issue at
 https://github.com/ralfarra/host-pricing-lab-privacy/issues
 
 ## Trademark disclaimer
 
-Host Pricing Lab is an independent project and is not affiliated with, endorsed by, or sponsored by Turo. “Turo” is used descriptively to identify the marketplace the extension supports.
+Pricing Lab is an independent project and is not affiliated with, endorsed by,
+or sponsored by Turo. "Turo" is used descriptively to identify the marketplace
+the extension supports.
