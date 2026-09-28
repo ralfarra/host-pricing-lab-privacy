@@ -1,6 +1,6 @@
 # Pricing Lab — Privacy Policy
 
-Effective date: September 7, 2026 · Applies to extension version 1.14.1 and later
+Effective date: September 28, 2026 · Applies to extension version 1.14.1 and later
 
 Pricing Lab is a Chrome extension that helps Turo hosts read the prices on their
 own host calendar, calculate an explainable pricing recommendation, and apply a
@@ -64,7 +64,7 @@ data by uninstalling the extension.
 ## What leaves your device, and only when you choose
 
 By default, captured page data and pricing settings stay on your device. There
-are three optional features that transmit data, each only when you actively use
+are four optional features that transmit data, each only when you actively use
 it:
 
 **1. The Pro AI pricing assistant.** When you submit a question, the extension
@@ -91,7 +91,18 @@ press Send, the extension sends:
 The panel shows a "What gets sent" list generated from the actual data being
 sent, so it always matches the payload.
 
-**3. Billing.** If you choose to upgrade to Pro, the extension contacts
+**3. The founder check-in.** The welcome page and, once, the popup offer an
+optional email box: "Want a hand setting your prices?" If you type your email
+and press Email me, the extension sends your email, a random install id, where
+you signed up (welcome page or popup), whether you're on Free or Pro, and the
+extension version. Nothing from your Turo calendar is included. We use that
+email only to write to you personally about Pricing Lab: a check-in a couple of
+days later, and an occasional note about Pro while you're on the free plan.
+Reply "stop" (or email turopricinglab@gmail.com) and we won't email you again.
+An email you type into the Feedback tab is never added to this list; it is used
+only to reply to that report.
+
+**4. Billing.** If you choose to upgrade to Pro, the extension contacts
 ExtensionPay (`extensionpay.com`), our third-party billing provider, to open
 checkout and verify license status. Payment is processed by Stripe through
 ExtensionPay. We never see or store your card details. No Turo page data or
@@ -113,8 +124,9 @@ pricing settings are sent to ExtensionPay.
 ## Retention
 
 Feedback reports, including any optional email and any attached calendar scan,
-are retained for up to 400 days and then deleted automatically. AI assistant
-questions are not retained after the answer is returned; only an anonymous
+are retained for up to 400 days and then deleted automatically. Check-in
+signups are retained for up to 400 days, or until you ask us to remove you.
+AI assistant questions are not retained after the answer is returned; only an anonymous
 per-install spend counter is kept, so the monthly usage cap can be enforced.
 
 ## Sharing
@@ -127,6 +139,9 @@ ExtensionPay and Stripe for billing — and only for the purpose described.
 ## Your choices
 
 - The Feedback email field is optional; leave it blank to report anonymously.
+- The check-in email box is optional and sends nothing unless you fill it in.
+  To be removed, reply "stop" to any email or write to
+  turopricinglab@gmail.com.
 - The calendar-scan attachment is off by default and must be ticked each time.
 - The AI assistant is optional and only runs when you submit a question.
 - To have a feedback report deleted before its retention period ends, email
