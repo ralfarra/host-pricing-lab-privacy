@@ -95,12 +95,18 @@ sent, so it always matches the payload.
 optional email box: "Want a hand setting your prices?" If you type your email
 and press Email me, the extension sends your email, a random install id, where
 you signed up (welcome page or popup), whether you're on Free or Pro, and the
-extension version. Nothing from your Turo calendar is included. We use that
-email only to write to you personally about Pricing Lab: a check-in a couple of
-days later, and an occasional note about Pro while you're on the free plan.
-Reply "stop" (or email turopricinglab@gmail.com) and we won't email you again.
-An email you type into the Feedback tab is never added to this list; it is used
-only to reply to that report.
+extension version. Nothing from your Turo calendar is included.
+
+We then send up to three short emails from turopricinglab@gmail.com: a quick
+start note right away, a check-in three days later, and, only if you're still on
+the free plan, a note about Pro after a week. Before that last one we check our
+Stripe account for a subscription under your address, so paying hosts don't get
+it. Every email has an unsubscribe link, and replying "unsubscribe" works too.
+
+The emails are delivered by Google (Gmail). Their timing is handled by Upstash
+QStash, which receives only the random install id and which email is due, never
+your address. An email you type into the Feedback tab is never added to this
+list; it is used only to reply to that report.
 
 **4. Billing.** If you choose to upgrade to Pro, the extension contacts
 ExtensionPay (`extensionpay.com`), our third-party billing provider, to open
@@ -125,23 +131,27 @@ pricing settings are sent to ExtensionPay.
 
 Feedback reports, including any optional email and any attached calendar scan,
 are retained for up to 400 days and then deleted automatically. Check-in
-signups are retained for up to 400 days, or until you ask us to remove you.
-AI assistant questions are not retained after the answer is returned; only an anonymous
+signups are retained for up to 400 days, or until you unsubscribe. When you
+unsubscribe we delete your signup and keep only a one-way hash of your address,
+which is what lets us keep honoring the opt-out. AI assistant questions are not
+retained after the answer is returned; only an anonymous
 per-install spend counter is kept, so the monthly usage cap can be enforced.
 
 ## Sharing
 
 We do not sell, rent, or trade any of this information. We do not use it for
 advertising, profiling, or credit-related decisions. It is shared only with the
-service providers named above — Anthropic for the AI assistant, and
-ExtensionPay and Stripe for billing — and only for the purpose described.
+service providers named above — Anthropic for the AI assistant, ExtensionPay
+and Stripe for billing, Google (Gmail) to deliver check-in emails, and Upstash
+to store this data and schedule those emails — and only for the purpose
+described.
 
 ## Your choices
 
 - The Feedback email field is optional; leave it blank to report anonymously.
 - The check-in email box is optional and sends nothing unless you fill it in.
-  To be removed, reply "stop" to any email or write to
-  turopricinglab@gmail.com.
+  To stop the emails, use the unsubscribe link in any of them, reply
+  "unsubscribe", or write to turopricinglab@gmail.com.
 - The calendar-scan attachment is off by default and must be ticked each time.
 - The AI assistant is optional and only runs when you submit a question.
 - To have a feedback report deleted before its retention period ends, email
