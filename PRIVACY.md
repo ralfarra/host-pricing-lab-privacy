@@ -1,10 +1,13 @@
 # Pricing Lab — Privacy Policy
 
-Effective date: September 28, 2026 · Applies to extension version 1.14.1 and later
+Effective date: October 6, 2026 · Applies to extension version 1.14.1 and later
 
 Pricing Lab is a Chrome extension that helps Turo hosts read the prices on their
 own host calendar, calculate an explainable pricing recommendation, and apply a
-price they have approved back to that calendar.
+price they have approved back to that calendar. "We" means Pricing Lab,
+McKinney, Texas. Use of Pricing Lab is also governed by the
+[Terms of Service](https://turopricinglab.com/terms/). The same policy is
+published at https://turopricinglab.com/privacy/.
 
 ## What the extension reads
 
@@ -77,19 +80,23 @@ never happens.
 **2. The Feedback tab.** When you write a bug report or feature request and
 press Send, the extension sends:
 
-- the message you typed;
+- the message you typed, whether it is an issue or a request, and your Yes/No
+  answer if you opened the sheet from the question shown after a bulk apply
+  (that question sends nothing by itself);
 - an optional reply email, if you choose to enter one — it can be left blank
   and the report will still send;
 - a short list of non-identifying diagnostics: the extension version, whether
   you are on the free or Pro plan, a coarse page category such as "host
-  calendar", the number of days in your last scan, and the number of saved
-  snapshots;
+  calendar", the number of days in your last scan, the number of saved
+  snapshots, and the last error message, if any;
+- the random install id, used to limit each install to a few reports a day;
 - **only if you tick the off-by-default "Attach my last calendar scan" box:**
   the dates in your current pricing window, the price on each day, your own
   floor for each day, and whether each day is booked or below your floor.
 
 The panel shows a "What gets sent" list generated from the actual data being
-sent, so it always matches the payload.
+sent, so it always matches the payload. Reports are stored on Upstash and posted
+to a private chat channel (Discord or Slack) that the founder reads.
 
 **3. The founder check-in.** The welcome page and, once, the popup offer an
 optional email box: "Want a hand setting your prices?" If you type your email
@@ -97,13 +104,14 @@ and press Email me, the extension sends your email, a random install id, where
 you signed up (welcome page or popup), whether you're on Free or Pro, and the
 extension version. Nothing from your Turo calendar is included.
 
-We then send up to three short emails from turopricinglab@gmail.com: a quick
+We then send up to three short emails from hello@turopricinglab.com or
+turopricinglab@gmail.com: a quick
 start note right away, a check-in three days later, and, only if you're still on
 the free plan, a note about Pro after a week. Before that last one we check our
 Stripe account for a subscription under your address, so paying hosts don't get
 it. Every email has an unsubscribe link, and replying "unsubscribe" works too.
 
-The emails are delivered by Google (Gmail). Their timing is handled by Upstash
+The emails are delivered by Resend or by Google (Gmail). Their timing is handled by Upstash
 QStash, which receives only the random install id and which email is due, never
 your address. An email you type into the Feedback tab is never added to this
 list; it is used only to reply to that report.
@@ -137,14 +145,34 @@ which is what lets us keep honoring the opt-out. AI assistant questions are not
 retained after the answer is returned; only an anonymous
 per-install spend counter is kept, so the monthly usage cap can be enforced.
 
+## The website
+
+turopricinglab.com uses no analytics, no advertising, no tracking pixels and no
+cookies. The only thing it stores in your browser is your light/dark theme
+choice (`hpl-theme` in local storage). It is hosted on Vercel, which keeps
+standard server logs such as IP address and browser type for security and
+operations. The contact form sends the name, email, topic, subject and message
+you enter to Web3Forms, which emails it to us; we use it only to reply.
+
 ## Sharing
 
-We do not sell, rent, or trade any of this information. We do not use it for
-advertising, profiling, or credit-related decisions. It is shared only with the
-service providers named above — Anthropic for the AI assistant, ExtensionPay
-and Stripe for billing, Google (Gmail) to deliver check-in emails, and Upstash
-to store this data and schedule those emails — and only for the purpose
-described.
+We do not sell, rent, or trade any of this information, and we do not share it
+for cross-context behavioral advertising. We do not use it for advertising,
+profiling, or credit-related decisions. It is shared only with service
+providers acting for us, and only for the purposes described: Vercel to host
+our proxy server and website, Upstash to store data and schedule emails,
+Anthropic for the AI assistant, ExtensionPay and Stripe for billing, Resend or
+Google (Gmail) to deliver check-in emails, Web3Forms for the website contact
+form, and a private Discord or Slack channel for feedback notifications. Turo is
+not a service provider: the extension reads Turo pages in your browser and
+sends nothing to Turo except price changes you approve.
+
+## If Pricing Lab is sold
+
+If Pricing Lab or its business is sold or merged, the new owner must keep to
+this policy for the data it receives, or ask before using that data in a new
+way. We will email Pro subscribers and check-in subscribers before the
+transfer.
 
 ## Your choices
 
@@ -156,6 +184,11 @@ described.
 - The AI assistant is optional and only runs when you submit a question.
 - To have a feedback report deleted before its retention period ends, email
   turopricinglab@gmail.com with the report id shown when you sent it.
+- To see, correct or delete anything we hold about you (a check-in signup, a
+  feedback report, a contact message, or assistant usage counters), email
+  turopricinglab@gmail.com with "Privacy request" in the subject. We answer
+  within 30 days and do not charge for it. Billing records held by ExtensionPay
+  and Stripe are kept as the law requires; we can help with requests about them.
 
 ## Security
 
@@ -165,20 +198,21 @@ evaluated.
 
 ## Children
 
-Pricing Lab is intended for adult vehicle hosts and is not directed to
-children.
+Pricing Lab is for adult vehicle hosts. It is not directed to anyone under 18,
+and we do not knowingly collect information from children.
 
 ## Changes
 
-Material changes to this policy will be published here alongside an updated
-extension release, with a new effective date.
+The effective date at the top changes with every update. Material changes are
+published here and on turopricinglab.com, noted in the
+[changelog](https://turopricinglab.com/changelog/), and emailed to Pro
+subscribers and check-in subscribers before they take effect.
 
 ## Contact
 
-turopricinglab@gmail.com
-
-Or open an issue at
-https://github.com/ralfarra/host-pricing-lab-privacy/issues
+turopricinglab@gmail.com. Use email for anything personal or for a privacy
+request. General questions can also go to
+https://github.com/ralfarra/host-pricing-lab-privacy/issues, which is public.
 
 ## Trademark disclaimer
 
