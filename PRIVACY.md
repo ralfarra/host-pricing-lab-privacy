@@ -1,6 +1,6 @@
 # Pricing Lab — Privacy Policy
 
-Effective date: October 6, 2026 · Applies to extension version 1.14.1 and later
+Effective date: October 12, 2026 · Applies to extension version 1.21.0 and later
 
 Pricing Lab is a Chrome extension that helps Turo hosts read the prices on their
 own host calendar, calculate an explainable pricing recommendation, and apply a
@@ -64,11 +64,13 @@ computer:
 You can clear snapshot history with the Clear button, or remove all extension
 data by uninstalling the extension.
 
-## What leaves your device, and only when you choose
+## What leaves your device
 
-By default, captured page data and pricing settings stay on your device. There
-are four optional features that transmit data, each only when you actively use
-it:
+By default, captured page data and pricing settings stay on your device. Four
+optional features transmit data, each only when you actively use it. A fifth,
+automatic error reports, sends failure codes and counts (never prices, dates or
+which car) when an apply or a calendar scan fails, unless you turn it off. It is
+described after the four.
 
 **1. The Pro AI pricing assistant.** When you submit a question, the extension
 sends that question plus a compact summary of your own captured pricing,
@@ -122,6 +124,31 @@ checkout and verify license status. Payment is processed by Stripe through
 ExtensionPay. We never see or store your card details. No Turo page data or
 pricing settings are sent to ExtensionPay.
 
+**5. Automatic error reports (on by default; you can turn them off).** When a
+price apply or a calendar scan you started fails or only partly works, the
+extension sends a short report so the problem can be fixed without waiting for
+you to write it up. It contains only:
+
+- a failure code for each batch that didn't go through, chosen from a fixed
+  list written by us (for example "load_timeout"), with how many days that
+  batch covered, how many were confirmed or left alone, and how long it took;
+- how many days were attempted and set, and how many batches and cars;
+- how many days of your pricing window the scan read, and, for a scan that
+  failed, how many passes it made and how many days it needed;
+- timing: how many times the calendar was scrolled and how long the extension
+  waited for Turo to load;
+- the extension version, Free or Pro, and whether it ran in the popup or the
+  side panel;
+- a random id used only for error reports, and the time. It is not the install
+  id the Feedback tab, the check-in emails and the assistant use, so a report
+  can't be tied to an email address you gave us.
+
+It never contains prices, dates, floors, your Turo URL, which car it is, Turo's
+own messages, or anything you typed. The Feedback tab shows this list, generated
+from the report's own fields, under "What an error report contains", next to the
+"Send anonymous error reports" switch that turns them off. At most six are sent
+per day.
+
 ## What is never transmitted
 
 - Your Turo password. The extension never requests or stores it.
@@ -138,7 +165,8 @@ pricing settings are sent to ExtensionPay.
 ## Retention
 
 Feedback reports, including any optional email and any attached calendar scan,
-are retained for up to 400 days and then deleted automatically. Check-in
+are retained for up to 400 days and then deleted automatically. Automatic error
+reports are retained for up to 90 days. Check-in
 signups are retained for up to 400 days, or until you unsubscribe. When you
 unsubscribe we delete your signup and keep only a one-way hash of your address,
 which is what lets us keep honoring the opt-out. AI assistant questions are not
@@ -163,7 +191,8 @@ providers acting for us, and only for the purposes described: Vercel to host
 our proxy server and website, Upstash to store data and schedule emails,
 Anthropic for the AI assistant, ExtensionPay and Stripe for billing, Resend or
 Google (Gmail) to deliver check-in emails, Web3Forms for the website contact
-form, and a private Discord or Slack channel for feedback notifications. Turo is
+form, and a private Discord or Slack channel for feedback and error-report
+notifications. Turo is
 not a service provider: the extension reads Turo pages in your browser and
 sends nothing to Turo except price changes you approve.
 
@@ -181,6 +210,8 @@ transfer.
   To stop the emails, use the unsubscribe link in any of them, reply
   "unsubscribe", or write to turopricinglab@gmail.com.
 - The calendar-scan attachment is off by default and must be ticked each time.
+- Automatic error reports can be turned off with the "Send anonymous error
+  reports" switch in the Feedback tab.
 - The AI assistant is optional and only runs when you submit a question.
 - To have a feedback report deleted before its retention period ends, email
   turopricinglab@gmail.com with the report id shown when you sent it.
