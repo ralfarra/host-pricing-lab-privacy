@@ -1,6 +1,6 @@
 # Pricing Lab — Privacy Policy
 
-Effective date: October 12, 2026 · Applies to extension version 1.21.0 and later
+Effective date: October 23, 2026 · Applies to extension version 1.21.0 and later
 
 Pricing Lab is a Chrome extension that helps Turo hosts read the prices on their
 own host calendar, calculate an explainable pricing recommendation, and apply a
@@ -137,6 +137,14 @@ you to write it up. It contains only:
   failed, how many passes it made and how many days it needed;
 - timing: how many times the calendar was scrolled and how long the extension
   waited for Turo to load;
+- for a day whose selection couldn't be confirmed: whether it read as
+  selected, where Turo's count of selected days was read (its Update button,
+  the editor's text, a sweep of the calendar, or nowhere), that count before
+  and after, whether Turo's editor and its Update button were found, how long
+  the press waited (a range such as "2.5–6s"), and which safety check stopped
+  it;
+- the Turo page's width as a range (under 700, 700–999 or 1000+ pixels), and
+  how many planned days Turo showed at a moved position;
 - the extension version, Free or Pro, and whether it ran in the popup or the
   side panel;
 - a random id used only for error reports, and the time. It is not the install
